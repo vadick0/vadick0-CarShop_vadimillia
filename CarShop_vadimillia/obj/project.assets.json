@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\Elliah\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj",
+      "projectUniqueName": "D:\\CarShop\\vadick0-CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj",
       "projectName": "CarShop_vadimillia",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\CarShop_vadimillia\\CarShop_vadimillia\\obj\\",
+      "projectPath": "D:\\CarShop\\vadick0-CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj",
+      "packagesPath": "C:\\Users\\Elliah\\.nuget\\packages\\",
+      "outputPath": "D:\\CarShop\\vadick0-CarShop_vadimillia\\CarShop_vadimillia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Elliah\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
