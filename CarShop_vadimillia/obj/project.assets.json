@@ -5707,11 +5707,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CarShop\\vadick0-CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj",
+      "projectUniqueName": "D:\\CarShop\\vadick0_CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj",
       "projectName": "CarShop_vadimillia",
-      "projectPath": "D:\\CarShop\\vadick0-CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj",
+      "projectPath": "D:\\CarShop\\vadick0_CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj",
       "packagesPath": "C:\\Users\\Elliah\\.nuget\\packages\\",
-      "outputPath": "D:\\CarShop\\vadick0-CarShop_vadimillia\\CarShop_vadimillia\\obj\\",
+      "outputPath": "D:\\CarShop\\vadick0_CarShop_vadimillia\\CarShop_vadimillia\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Elliah\\AppData\\Roaming\\NuGet\\NuGet.Config",

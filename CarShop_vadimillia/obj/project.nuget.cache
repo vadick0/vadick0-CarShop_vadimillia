@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p4NnqnjCbza4dfwHNxc4gkuYGiq9Rtch/sIkIcKZfzNdNMBQLgX6BTN+jBcnQV1oBZeppXrEANk5z/uiHUxGDg==",
+  "dgSpecHash": "adRkRzusWcpzvKpA23lu/zKnDesDhw7drEFO1k/D8GC3ClSn9j59dKpRVV/TDt2ZHVIZhz4xL6FfU/4CYgYBwA==",
   "success": true,
-  "projectFilePath": "D:\\CarShop\\vadick0-CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj",
+  "projectFilePath": "D:\\CarShop\\vadick0_CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Elliah\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\Elliah\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
