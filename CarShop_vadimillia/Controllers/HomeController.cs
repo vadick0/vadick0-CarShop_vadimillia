@@ -1,4 +1,5 @@
 ﻿using CarShop_vadimillia.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -16,9 +17,10 @@ namespace CarShop_vadimillia.Controllers
         {
             db = context;
         }
+        [Authorize]
         public IActionResult Index()
         {
-            return View(db.Vehicles.ToList());
+            return Content(User.Identity.Name);
         }
     }
 }
