@@ -13,7 +13,22 @@ namespace CarShop_vadimillia.Models
         public string Email { get; set; }
         public string Password { get; set; }
         public string Phone { get; set; }
-        public int RoleId { get; set; }
+        public int? RoleId { get; set; }
         public Role Role { get; set; }
+    }
+    public class Role
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public List<User> Users { get; set; }
+        public Role()
+        {
+            Users = new List<User>();
+        }
+
+        public static implicit operator object(Role v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

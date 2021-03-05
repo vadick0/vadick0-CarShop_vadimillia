@@ -33,10 +33,10 @@ namespace CarShop_vadimillia
         .AddCookie(options => //CookieAuthenticationOptions
                 {
         options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
-    });
+        });
             services.AddControllersWithViews();
         }
-
+            
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

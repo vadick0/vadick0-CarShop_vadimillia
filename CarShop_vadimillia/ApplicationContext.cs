@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace CarShop_vadimillia
+namespace CarShop_vadimillia.Models
 {
     public class ApplicationContext : DbContext
     {
