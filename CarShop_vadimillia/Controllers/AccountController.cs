@@ -1,58 +1,21 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using CarShop_vadimillia.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using CarShop_vadimillia.ViewModels; // пространство имен моделей RegisterModel и LoginModel
+using CarShop_vadimillia.Models; // пространство имен UserContext и класса User
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using CarShop_vadimillia;
-using CarShop_vadimillia.ViewModels;
 
-namespace RolesApp.Controllers
+namespace AuthApp.Controllers
 {
     public class AccountController : Controller
     {
-        private ApplicationContext _context;
+        private ApplicationContext db;
         public AccountController(ApplicationContext context)
         {
-            _context = context;
-        }
-        [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(RegisterModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                User user = await _context.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
-                if (user == null)
-                {
-                    // добавляем пользователя в бд
-                    user = new User { Email = model.Email, Password = model.Password };
-                    Role userRole = await _context.Roles.FirstOrDefaultAsync(r => r.Name == "user");
-                    Role userRoleId = await _context.Roles.FirstOrDefaultAsync(r => r.Id == 2);
-
-                    if (userRole != null)
-                    {
-                        user.Role = userRole;
-                    }
-
-                    _context.Users.Add(user);
-                    await _context.SaveChangesAsync();
-
-                    await Authenticate(user); // аутентификация
-
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                    ModelState.AddModelError("", "Некорректные логин и(или) пароль");
-            }
-            return View(model);
+            db = context;
         }
         [HttpGet]
         public IActionResult Login()
@@ -65,7 +28,7 @@ namespace RolesApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = await _context.Users
+                User user = await db.Users
                     .Include(u => u.Role)
                     .FirstOrDefaultAsync(u => u.Email == model.Email && u.Password == model.Password);
                 if (user != null)
@@ -78,6 +41,39 @@ namespace RolesApp.Controllers
             }
             return View(model);
         }
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
+                if (user == null)
+                {
+                    // добавляем пользователя в бд
+                    user = new User { Email = model.Email, Password = model.Password };
+                    Role userRole = await db.Roles.FirstOrDefaultAsync(r => r.Name == "user");
+                    if (userRole != null)
+                        user.Role = userRole;
+
+                    db.Users.Add(user);
+                    await db.SaveChangesAsync();
+
+                    await Authenticate(user); // аутентификация
+
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                    ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+            }
+            return View(model);
+        }
+
         private async Task Authenticate(User user)
         {
             // создаем один claim
@@ -91,6 +87,12 @@ namespace RolesApp.Controllers
                 ClaimsIdentity.DefaultRoleClaimType);
             // установка аутентификационных куки
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "Account");
         }
     }
 }
