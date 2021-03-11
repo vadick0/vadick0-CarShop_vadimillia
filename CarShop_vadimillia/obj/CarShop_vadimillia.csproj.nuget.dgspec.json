@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< Updated upstream
     "C:\\Users\\Admin\\source\\repos\\CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj": {}
   },
   "projects": {
@@ -13,19 +12,6 @@
         "projectPath": "C:\\Users\\Admin\\source\\repos\\CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Admin\\source\\repos\\CarShop_vadimillia\\CarShop_vadimillia\\obj\\",
-=======
-    "D:\\Вадим\\GitHub\\vadick0-CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj": {}
-  },
-  "projects": {
-    "D:\\Вадим\\GitHub\\vadick0-CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "D:\\Вадим\\GitHub\\vadick0-CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj",
-        "projectName": "CarShop_vadimillia",
-        "projectPath": "D:\\Вадим\\GitHub\\vadick0-CarShop_vadimillia\\CarShop_vadimillia\\CarShop_vadimillia.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Вадим\\GitHub\\vadick0-CarShop_vadimillia\\CarShop_vadimillia\\obj\\",
->>>>>>> Stashed changes
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,23 +39,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-<<<<<<< Updated upstream
-=======
-          "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.3, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[5.0.3, )"
-            },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[3.1.5, )"
-            }
-          },
->>>>>>> Stashed changes
           "imports": [
             "net461",
             "net462",
