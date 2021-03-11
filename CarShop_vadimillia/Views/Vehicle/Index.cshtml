@@ -1,0 +1,35 @@
+﻿@*
+    
+*@
+<form asp-action="AddVehicle" asp-controller="Vehicle" method="post" enctype="multipart/form-data">
+    <p>
+        <label>Марка Автомобиля</label><br>
+        <input name="Mark" />
+    </p>
+    <p>
+        <label>Год Выпуска</label><br>
+        <input type="number" name="BuildYear" />
+    </p>
+    <p>
+        <label>Описание</label><br>
+        <input name="Description" />
+    </p>
+    <p>
+        <label>Стоимость</label><br>
+        <input type="number" name="Price" />
+    </p>
+    <p>
+        <input type="file" name="formFile" /><br>
+        <input type="submit" value="Загрузить" />
+    </p>
+</form>
+@foreach (var car in ViewBag.AllCars)
+{
+
+    <img src="@car.Img" />
+    <p>@car.Mark</p>
+    <p>@car.BuildYear</p>
+    <p>@car.Description</p>
+    <p>@car.Price</p>
+}
+
