@@ -234,3 +234,4 @@ D:\Вадим\GitHub\vadick0-CarShop_vadimillia\CarShop_vadimillia\bin\Debug\net
 D:\Вадим\GitHub\vadick0-CarShop_vadimillia\CarShop_vadimillia\obj\Debug\netcoreapp3.1\CarShop_vadimillia.Views.pdb
 D:\Вадим\GitHub\vadick0-CarShop_vadimillia\CarShop_vadimillia\obj\Debug\netcoreapp3.1\CarShop_vadimillia.csproj.CopyComplete
 D:\Вадим\GitHub\vadick0-CarShop_vadimillia\CarShop_vadimillia\obj\Debug\netcoreapp3.1\CarShop_vadimillia.genruntimeconfig.cache
+D:\Вадим\GitHub\vadick0-CarShop_vadimillia\CarShop_vadimillia\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\AddVehicle.cshtml.g.cs

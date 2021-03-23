@@ -18,6 +18,12 @@ namespace CarShop_vadimillia.Controllers
             _db = db;
             _appEnvironment = appEnvironment;
         }
+        [HttpGet]
+        [Authorize(Roles = "admin")]
+        public IActionResult AddVehicle()
+        {
+            return View();
+        }
         [HttpPost]
         [Authorize(Roles = "admin")]
         public IActionResult AddVehicle(string Mark, int BuildYear, string Description, int Price, IFormFile formFile)
@@ -40,7 +46,7 @@ namespace CarShop_vadimillia.Controllers
                 veh.Img = "/Files/" + formFile.FileName;
                 _db.Vehicles.Add(veh);
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+                return View();
             }
             catch (Exception)
             {
@@ -48,53 +54,31 @@ namespace CarShop_vadimillia.Controllers
                 return RedirectToAction("Error");
             }
         }
-
-        //public IActionResult Index(int year, int? year2)
-        //{
-        //    try
-        //    {
-        //        if (year2 != null)
-        //        {
-        //            ViewBag.ByYears = _db.Vehicles.Where(x => x.BuildYear >= year && x.BuildYear <= year2);
-        //        }
-        //        else
-        //        {
-        //            ViewBag.ByYear = _db.Vehicles.Where(x => x.BuildYear >= year2 && x.BuildYear <= year);
-        //        }
-        //        return View();
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        return RedirectToAction("Index");
-        //    }
-        //}
-
-        //public IActionResult Index(string description)
-        //{
-        //    try
-        //    {
-        //        if (description != null)
-        //        {
-        //            ViewBag.OrderByTitleAndDescription = _db.Vehicles.Where(x => x.Mark.Contains(description) || x.Description.Contains(description));
-        //            return View();
-        //        }
-        //        else
-        //        {
-        //            return View(false);
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        return RedirectToAction("Error");
-        //    }
-        //}
-        public IActionResult Index()
+        public IActionResult Index(string mark = "", /*int year1 = 1000, int year2 = 2025,*/ string desc = "", int price1 = 100, int price2 = 500000000,bool order = true)
         {
-            ViewBag.AllCars = _db.Vehicles.ToList();
-            return View();
+            try
+            {
+                if (order)
+                {
+                    ViewBag.Cars = _db.Vehicles.Where(x => x.Mark.Contains(mark) && /*x.BuildYear >= year1 && x.BuildYear <= year2 &&*/ x.Description.Contains(desc) && x.Price >= price1 && x.Price <= price2).OrderByDescending(x => x.Id).ToList();
+                }
+                else
+                {
+                    ViewBag.Cars = _db.Vehicles.Where(x => x.Mark.Contains(mark) && /*x.BuildYear >= year1 && x.BuildYear <= year2 &&*/ x.Description.Contains(desc) && x.Price >= price1 && x.Price <= price2).OrderBy(x => x.Id).ToList();
+                }
+                return View();
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("Error");
+            }
+            
         }
+        //public IActionResult Index()
+        //{
+        //    ViewBag.AllCars = _db.Vehicles.ToList();
+        //    return View();
+        //}
 
     }
 }
